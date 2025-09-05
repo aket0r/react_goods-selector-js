@@ -21,15 +21,15 @@ export const App = () => {
   return (
     <main className="section container">
       <h1 className="title is-flex is-align-items-center">
-        {selectedItem !== 'No goods selected'
+        {selectedItem
           ? `${selectedItem} is selected`
           : 'No goods selected'}
-        {selectedItem !== 'No goods selected' && (
+        {selectedItem && (
           <button
             data-cy="ClearButton"
             type="button"
             className="delete ml-3"
-            onClick={() => setSelected('No goods selected')}
+            onClick={() => setSelected('')}
             aria-label="clear selection"
           />
         )}
@@ -54,7 +54,7 @@ export const App = () => {
                     }
                     onClick={() => {
                       if (selectedItem === item) {
-                        setSelected('No goods selected');
+                        setSelected('');
                       } else {
                         setSelected(item);
                       }
